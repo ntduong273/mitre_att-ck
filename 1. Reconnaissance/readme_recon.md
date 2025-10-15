@@ -1,4 +1,4 @@
-# Tactics 1: Reconnaissance
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/538fa9c1-2d8a-4aac-82c9-b55b6e9879b4" /># Tactics 1: Reconnaissance
 
 
 ## ID: TA0043
@@ -15,11 +15,11 @@ Thông tin thu thập được tận dụng trong các giai đoạn khác của 
 - ...
 
 **Gồm 10 kỹ thuật:**
-- _**T1595 Active Scanning:**_ chủ động dùng các tools dò quét, thăm dò hạ tầng của victim thông qua lưu lượng mạng nhằm thu thập in4.
-- _**T1592 Gather Victim Host Information:**_ 
-- _**T1589 Gather Victim Identity Information:**_
-- _**T1590 Gather Victim Network Information:**_
-- _**T1591 Gather Victim Org Information:**_
+- _**T1595 Active Scanning:**_ chủ động dùng các tools dò quét, thăm dò hạ tầng của victim thông qua lưu lượng mạng nhằm thu thập in4. (Còn lại là bị động)
+- _**T1592 Gather Victim Host Information:**_ dữ liệu quản trị (vd: tên host, IP public được gán,...), in4 cấu hình (vd: dùng OS gì, ngôn ngữ gì, dùng các công cụ gì,..).
+- _**T1589 Gather Victim Identity Information:**_ gồm dữ liệu cá nhân (vd: tên nv, email,..), chi tiết nhạy cảm như thông tin đăng nhập, cấu hình xác thực đa yếu tố (MFA).
+- _**T1590 Gather Victim Network Information:**_ kiểu dải địa chỉ IPs, tên domain hoặc các thông tin cấu hình như cấu trúc liên kết và hoạt động.
+- _**T1591 Gather Victim Org Information:**_ 
 - _**T1598 Phishing for Information:**_
 - _**T1597 Search Closed Sources:**_
 - _**T1596 Search Open Technical Databases:**_
