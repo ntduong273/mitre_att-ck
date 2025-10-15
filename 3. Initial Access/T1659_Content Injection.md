@@ -33,7 +33,7 @@ Chèn nội dung vào hệ thống nạn nhân theo nhiều cách khác nhau, ba
 |----|-------------|----------------|---------|
 | DS0022 | File | File Creation | Giám sát các hành vi **tạo tệp bất thường hoặc không như mong đợi**, cho thấy nội dung độc hại đã bị chèn vào thông qua các kênh giao tiếp mạng trực tuyến.
 **Phân tích 1 – Phát hiện việc tạo tệp độc hại thông qua chèn nội dung (Content Injection)**
-```(EventCode=11 OR source="/var/log/audit/audit.log" type="open")| where (file_type IN ("exe", "dll", "js", "vbs", "ps1", "sh", "php"))| where (process_path="C:\Users\\AppData\Local\Temp\" OR process_path="/tmp/" OR process_path="/var/tmp/")| eval risk_score=case( like(file_name, "%.exe"), 8, like(file_name, "%.js"), 9, like(file_name, "%.sh"), 7)| where risk_score >= 7| stats count by _time, host, user, file_name, process_path, risk_score``` | 
+`(EventCode=11 OR source="/var/log/audit/audit.log" type="open")| where (file_type IN ("exe", "dll", "js", "vbs", "ps1", "sh", "php"))| where (process_path="C:\Users\\AppData\Local\Temp\" OR process_path="/tmp/" OR process_path="/var/tmp/")| eval risk_score=case( like(file_name, "%.exe"), 8, like(file_name, "%.js"), 9, like(file_name, "%.sh"), 7)| where risk_score >= 7| stats count by _time, host, user, file_name, process_path, risk_score` | 
 
 | DS0029 | Network traffic | Network Traffic Content | 
 | DS0009 | Process | Process Creation | 
