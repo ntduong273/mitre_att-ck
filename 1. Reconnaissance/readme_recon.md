@@ -15,13 +15,13 @@ Thông tin thu thập được tận dụng trong các giai đoạn khác của 
 - ...
 
 **Gồm 10 kỹ thuật:**
-- T1595 Active Scanning: chủ động dùng các tools dò quét, thăm dò hạ tầng của victim thông qua lưu lượng mạng nhằm thu thập in4.
-- T1592 Gather Victim Host Information
-- T1589 Gather Victim Identity Information
-- T1590 Gather Victim Network Information
-- T1591 Gather Victim Org Information
-- T1598 Phishing for Information
-- T1597 Search Closed Sources
-- T1596 Search Open Technical Databases
-- T1593 Search Open Websites/Domains
-- T1594 Search Victim-Owned Websites
+- _**T1595 Active Scanning:**_ chủ động dùng các tools dò quét, thăm dò hạ tầng của victim thông qua lưu lượng mạng nhằm thu thập in4.
+- _**T1592 Gather Victim Host Information:**_ 
+- _**T1589 Gather Victim Identity Information:**_
+- _**T1590 Gather Victim Network Information:**_
+- _**T1591 Gather Victim Org Information:**_
+- _**T1598 Phishing for Information:**_
+- _**T1597 Search Closed Sources:**_
+- _**T1596 Search Open Technical Databases:**_
+- _**T1593 Search Open Websites/Domains:**_
+- _**T1594 Search Victim-Owned Websites:**_
