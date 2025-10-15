@@ -15,7 +15,7 @@ Chỗ đứng ban đầu này có thể được duy trì lâu dài hoặc tạm
 - _**T1200 Hardware Additions:**_ thêm các phụ kiện, pcứng, tbi mạng vào hệ thống/mạng nội bộ -> làm vector để xâm nhập
 - _**T1566 Phishing:**_ các social engineering thực hiện qua mạng, 2 kiểu:nhắm vào mục tiêu cụ thể(spearphishing) và hàng loạt(đại trà, random)
 - _**T1091 Replication Through Removable Media:**_ sử dụng ptien lưu trữ rời chứa malware cắm vào hthong, lợi dụng autorun để chạy malware
-- _**T1195 Supply Chain Compromise:**_ thao túng sphẩm/cơ chế giao nhận sphẩm trước khi tới end-user nhằm mục đích xâm phạm dữ liệu/hệ thống
-- _**T1199 Trusted Relationship:**_
-- _**T1078 Valid Accounts:**_
-- _**T1669 WiFi-Networks:**_
+- _**T1195 Supply Chain Compromise:**_ thao túng sphẩm/cơ chế giao nhận sp trước khi tới end-user nhằm xâm phạm dữ liệu/hệ thống
+- _**T1199 Trusted Relationship:**_ xâm nhập/lợi dụng mqh của các tổ chức có quyền, truy cập tới victims mà không bị check
+- _**T1078 Valid Accounts:**_ lạm dụng in4 đăng nhập của các tkhoản hiện có để đạt Initial Access, Persistence,...
+- _**T1669 WiFi-Networks:**_ truy cập vào mạng không dây của mục tiêu, lợi dụng Wi-Fi mở/xâm phạm Wi-Fi được bảo mật
