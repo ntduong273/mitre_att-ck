@@ -3,15 +3,15 @@
 
 ## ID: TA0043
 
-Giai đoạn attacker thăm dò, dò quét hệ thống của nạn nhân nhằm thu thập các thông tin hữu ích cho quá trình tấn công sau này.
+Thăm dò, dò quét hệ thống của victim -> thu thập thông tin hữu ích cho quá trình tấn công.
 
-Thông tin có thể là hạ tầng triển khai, nhân sự, dịch vụ cung cấp, công nghệ sử dụng, website, sản phẩm,....
+Thông tin: hạ tầng triển khai, nhân sự, dịch vụ cung cấp, công nghệ sử dụng, website, sản phẩm,....
 
-Có thể bằng cách phương pháp **chủ động** _(như: scan mạng, port)_ hay **bị động** _(như: OSINT, Phishing)_.
+2 phương pháp: **chủ động** _(như: scan mạng, port)_ và **bị động** _(như: OSINT, Phishing)_.
 
-Thông tin thu thập được tận dụng trong các giai đoạn khác của vòng đời tấn công, VD:
-- Lên kế hoạch và thực hiện Initial Access (Tấn công vào đâu, cách thức nào, thời gian, địa điểm,...)
-- Xác định phạm vi và ưu tiên các mục tiêu sau khi xâm nhập (Chỗ nào dễ, chỗ nào khó khai thác, chỗ nào chứa tài sản giá trị,...)
+in4 thu được, đc dùng trong các giai đoạn khác nhau của vòng đời tấn công, VD:
+- Lên plan, thực hiện Initial Access (Tấn công vào đâu, cách thức nào, thời gian, địa điểm,...)
+- Xác định phạm vi tc, ưu tiên mục tiêu nào khi xâm nhập (Chỗ nào dễ, chỗ nào khó khai thác, chỗ nào chứa tài sản giá trị,...)
 - ...
 
 **Gồm 10 kỹ thuật:**
