@@ -16,7 +16,7 @@ in4 thu được, đc dùng trong các giai đoạn khác nhau của vòng đờ
 
 **Gồm 10 kỹ thuật:**
 
-- _**T1589 Gather Victim Identity Information:**_ gồm data cá nhân (tên nv, email,..), in4 nhạy cảm (in4 đăng nhập, cấu hình xác thực đa yếu tố - MFA).
+- _**T1589 Gather Victim Identity Information:**_ gồm data cá nhân (tên nv, email,..), in4 nhạy cảm (login, cấu hình xác thực đa yếu tố - MFA).
 - _**T1590 Gather Victim Network Information:**_ kiểu dải IP address, tên domain, các in4 cấu hình như cấu trúc liên kết và hoạt động.
 - _**T1591 Gather Victim Org Information:**_ các bộ phận/phòng ban, hoạt động kinh doanh, vai trò, trách nhiệm của nviên chủ chốt,...
 - _**T1592 Gather Victim Host Information:**_ dữ liệu quản trị (tên host, IP public được gán,..) in4 cấu hình (dùng OS gì, dùng tools gì,..).
