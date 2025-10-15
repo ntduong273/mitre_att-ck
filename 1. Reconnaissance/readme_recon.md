@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/538fa9c1-2d8a-4aac-82c9-b55b6e9879b4" /># Tactics 1: Reconnaissance
+# Tactics 1: Reconnaissance
 
 
 ## ID: TA0043
