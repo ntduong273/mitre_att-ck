@@ -2,7 +2,7 @@
 
 ## ID: TA0002
 
-Dùng các kỹ thuật khiến code do attacker tạo được chạy, kết hợp với các kỹ thuật khác để đạt mục tiêu rộng hơn như thăm dò mạng hoặc đánh cắp dữ liệu.
+Dùng các kỹ thuật khiến code (malware) do attacker tạo được chạy (trên local - máy victims hoặc điều khiển từ xa), kết hợp với các kỹ thuật khác để đạt mục tiêu rộng hơn như thăm dò mạng hoặc đánh cắp dữ liệu.
 
 **Gồm 16 techniques:**
 - _**T1651 Cloud Administration Command:**_
