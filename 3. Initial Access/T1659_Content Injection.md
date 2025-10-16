@@ -29,9 +29,30 @@ Chèn nội dung vào hệ thống nạn nhân theo nhiều cách khác nhau, ba
 
 ## Detection
 
-| ID | Data Source | Data Component | Detects |
-|----|-------------|----------------|---------|
-| DS0022 | File | File Creation | Giám sát các hành vi **tạo tệp bất thường hoặc không như mong đợi**, cho thấy nội dung độc hại đã bị chèn vào thông qua các kênh giao tiếp mạng trực tuyến.<br>**Phân tích 1 – Phát hiện việc tạo tệp độc hại thông qua chèn nội dung (Content Injection)** <br>```(EventCode=11 OR source="/var/log/audit/audit.log" type="open")| where (file_type IN ("exe", "dll", "js", "vbs", "ps1", "sh", "php"))| where (process_path="C:\Users\\AppData\Local\Temp\" OR process_path="/tmp/" OR process_path="/var/tmp/")| eval risk_score=case( like(file_name, "%.exe"), 8, like(file_name, "%.js"), 9, like(file_name, "%.sh"), 7)| where risk_score >= 7| stats count by _time, host, user, file_name, process_path, risk_score``` | 
+<table>
+<tr>
+  <th>ID</th>
+  <th>Data Source</th>
+  <th>Data Component</th>
+  <th>Detects</th>
+</tr>
+<tr>
+  <td>DS0022</td>
+  <td>File</td>
+  <td>File Creation</td>
+  <td>Giám sát các hành vi tạo tệp bất thường hoặc không như mong đợi, cho thấy nội dung độc hại đã bị chèn vào thông qua các kênh giao tiếp mạng trực tuyến.<br>Phân tích 1 – Phát hiện việc tạo tệp độc hại thông qua chèn nội dung (Content Injection) <br> (EventCode=11 OR source="/var/log/audit/audit.log" type="open")| where (file_type IN ("exe", "dll", "js", "vbs", "ps1", "sh", "php"))| where (process_path="C:\Users\\AppData\Local\Temp\" OR process_path="/tmp/" OR process_path="/var/tmp/")| eval risk_score=case( like(file_name, "%.exe"), 8, like(file_name, "%.js"), 9, like(file_name, "%.sh"), 7)| where risk_score >= 7| stats count by _time, host, user, file_name, process_path, risk_score </td>
+</tr>
+<tr>
+  <td>DS0029</td>
+  <td>Network traffic</td>
+  <td>Network Traffic Content</td>
+  <td></td>
+</tr>
+<tr>
+  <td>DS0009</td>
+  <td>Process</td>
+  <td>Process Creation</td>
+  <td></td>
+</tr>
+</table>
 
-| DS0029 | Network traffic | Network Traffic Content | 
-| DS0009 | Process | Process Creation | 
