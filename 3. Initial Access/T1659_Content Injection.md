@@ -40,19 +40,23 @@ Chèn nội dung vào hệ thống nạn nhân theo nhiều cách khác nhau, ba
   <td>DS0022</td>
   <td>File</td>
   <td>File Creation</td>
-  <td>Giám sát các hành vi tạo tệp bất thường hoặc không như mong đợi, cho thấy nội dung độc hại đã bị chèn vào thông qua các kênh giao tiếp mạng trực tuyến.<br>Phân tích 1 – Phát hiện việc tạo tệp độc hại thông qua chèn nội dung (Content Injection) <br> <code> (EventCode=11 OR source="/var/log/audit/audit.log" type="open")| where (file_type IN ("exe", "dll", "js", "vbs", "ps1", "sh", "php"))| where (process_path="C:\Users\\AppData\Local\Temp\" OR process_path="/tmp/" OR process_path="/var/tmp/")| eval risk_score=case( like(file_name, "%.exe"), 8, like(file_name, "%.js"), 9, like(file_name, "%.sh"), 7)| where risk_score >= 7| stats count by _time, host, user, file_name, process_path, risk_score </code> </td>
+  <td>Giám sát các hành vi tạo tệp bất thường hoặc không như mong đợi, cho thấy nội dung độc hại đã bị chèn vào thông qua các kênh giao tiếp mạng trực tuyến.<br>Phân tích 1 – Phát hiện việc tạo tệp độc hại thông qua chèn nội dung (Content Injection) <br> <code>(EventCode=11 OR source="/var/log/audit/audit.log" type="open")| where (file_type IN ("exe", "dll", "js", "vbs", "ps1", "sh", "php"))| where (process_path="C:\Users\\AppData\Local\Temp\" OR process_path="/tmp/" OR process_path="/var/tmp/")| eval risk_score=case( like(file_name, "%.exe"), 8, like(file_name, "%.js"), 9, like(file_name, "%.sh"), 7)| where risk_score >= 7| stats count by _time, host, user, file_name, process_path, risk_score</code> 
+  </td>
 </tr>
 <tr>
   <td>DS0029</td>
   <td>Network traffic</td>
   <td>Network Traffic Content</td>
-  <td></td>
+  <td>Giám sát các lưu lượng mạng bất thường cho thấy payload độc hại được truyền vào hệ thống. Sử dụng NIDS, kết hợp với kiểm tra SSL/TLS, phát hiện các payload độc hại, các dạng obfuscation nội dung, exploit code. <br> Phân tích 1 – Phát hiện chèn nội dung độc hại trong lưu lượng mạng:<br><code>(EventCode=3)OR (source="zeek_http_logs" response_code IN (302, 307) AND url IN (malicious_redirect_list))OR (source="proxy_logs" response_body_content IN (suspicious_script_list))| eval risk_score=case( response_code=302 AND url IN (malicious_redirect_list), 9, response_body_content IN (suspicious_script_list), 8, url LIKE "%@%", 7)| where risk_score >= 7| stats count by _time, host, user, url, response_code, risk_score</code>
+  </td> 
 </tr>
 <tr>
   <td>DS0009</td>
   <td>Process</td>
   <td>Process Creation</td>
-  <td></td>
+  <td>Tìm kiếm các hành vi trên endpoint, cho thấy dấu hiệu bị xâm phạm, VD: các hành vi bất thường của browser process. Bao gồm: Các tệp đáng ngờ được write ổ đĩa, bằng chứng của Process Injection (chèn tiến trình) nhằm che giấu việc thực thi.
+Phân tích 1 – Phát hiện thực thi tiến trình độc hại từ nội dung bị chèn. <br> <code>(EventCode=1 OR source="/var/log/audit/audit.log" type="execve")| where (parent_process IN ("chrome.exe", "firefox.exe", "edge.exe", "safari.exe", "iexplore.exe"))| where (process_name IN ("powershell.exe", "cmd.exe", "wget", "curl", "bash", "python"))| eval risk_score=case( process_name IN ("powershell.exe", "cmd.exe"), 9, process_name IN ("wget", "curl"), 8, parent_process IN ("chrome.exe", "firefox.exe"), 7)| where risk_score >= 7| stats count by _time, host, user, process_name, parent_process, risk_score</code>
+  </td>
 </tr>
 </table>
 
