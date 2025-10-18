@@ -2,6 +2,10 @@
 
 Một chút ghi chép khi tìm hiểu về MITRE ATT&amp;CK 
 
+Sưu tầm:
+[POSTCARD](https://www.youtube.com/watch?v=62y0unJohwM)
+
+
 **Thông tin chung:** Tài liệu toàn diện về các chiến thuật, kỹ thuật, quy trình tấn công mạng thường sử dụng.
 
 ATT&CK = Adversarial Tactics Techniques & Common Knowledge (Các chiến thuật, kỹ thuật phá hoại và hiểu biết chung).
