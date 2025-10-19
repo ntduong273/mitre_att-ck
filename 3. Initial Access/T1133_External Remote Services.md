@@ -1,5 +1,6 @@
 # External Remote Services
 
+
 Lợi dụng các services remote access hướng ra bên ngoài để initial access, duy trì tồn tại trong mạng, dù cho có các gateway dịch vụ từ xa để quản lý kết nối và xác thực thông tin đăng nhập cho những dịch vụ này.
 
 Sử dụng các tài khoản hợp lệ để access services, những tài khoản này có thể bị thu thập thông qua credential pharming, lấy từ người dùng sau khi xâm nhập vào mạng doanh nghiệp. 
