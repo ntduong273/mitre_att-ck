@@ -20,8 +20,14 @@ Ví dụ một kịch bản rất quen thuộc: *Ai đó mở file, kích hoạt
 <img width="2552" height="1782" alt="image" src="https://github.com/user-attachments/assets/a9f778c9-3f88-47e6-b9fe-ae4989c8f256" />
 
 Ví dụ 2: *SIEM SOC nhận alert từ EDR, thấy 1 process powershell.exe/rundll32.exe đang cố đọc bộ nhớ của process lsass.exe.
-Nghe nói cái LSSS này rất nhạy cảm. (3:06) Ừ, cực kỳ nhạy cảm luôn. Tiến trình LSSS này, tên đầy đủ là Local Security Authority Subsystem Service.
-Nó quản lý thông tin xác thực trên Windows sau khi mình đăng nhập. (3:18) À, tức là mật khẩu các thứ. (3:20) Đúng rồi, hoặc là cái hash mật khẩu.*
+Tiến trình lsass (Local Security Authority Subsystem Service) rất nhạy cảm, nó quản lý thông tin xác thực trên Windows sau khi user đăng nhập, hash mật khẩu các thứ,...*
+
+<img width="2568" height="1722" alt="image" src="https://github.com/user-attachments/assets/b83a275f-4c03-42b7-aaff-21b9d6d897c9" />
+
+**Tóm lại:** thay vì chỉ chạy theo các dấu hiệu tĩnh (IOCs, IP,...) dễ thay đổi thì ATT&CK hướng SOC vào việc hiểu và phát hiện cái hành vi, cái TTP (Tactics, Techniques, Procedures) của attacker, giúp phát hiện các threat mới hoặc biến thể mới, ngay cả khi malware thay đổi nhưng cách tấn công thì vẫn thế.
+
+Ngoài ra thì nó còn giúp SOC analysist nhìn ra các khoảng trống, các điểm yếu trong hệ thống giám sát (Gap Analysis) giúp thiết kế lại các quy tắc giám sát hay các hoạt động Threat Hunting hiệu quả và đúng mục tiêu hơn.
+
 
 ____________________________________________________________________________________________________________________________
 
