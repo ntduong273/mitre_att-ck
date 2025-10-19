@@ -31,7 +31,9 @@ Ngoài ra thì nó còn giúp SOC analysist nhìn ra các khoảng trống, các
 
 ____________________________________________________________________________________________________________________________
 
-**ATT&CK Matrix for Enterprise gồm 14 tactics, mỗi tactic có techniques, sub-techniques**
+**ATT&CK Matrix for Enterprise gồm 14 tactics chia làm 2 giai đoạn: chuẩn bị và tấn công, mỗi tactic có techniques, sub-techniques**
+
+<img width="1650" height="698" alt="image" src="https://github.com/user-attachments/assets/7c8f3092-653a-48dc-9b92-539e5fe799ee" />
 
 ## TA0043 Reconnaissance
 
