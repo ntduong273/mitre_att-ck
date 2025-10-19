@@ -7,7 +7,7 @@ ATT&CK = Adversarial Tactics Techniques & Common Knowledge (Các chiến thuật
 ____________________________________________________________________________________________________________________________
 
 Sưu tầm:
-[POSTCARD](https://www.youtube.com/watch?v=62y0unJohwM)
+[PODCAST](https://www.youtube.com/watch?v=62y0unJohwM)
 
 **Cách MITRE ATT&CK framework được dùng để phân tích các cuộc tấn công mạng thực tế trong SOC**
 
