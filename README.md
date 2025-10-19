@@ -48,7 +48,7 @@ Thiết lập, phát triển tài nguyên phục vụ quá trình tấn công.<b
 
 ## TA0001 Initial Access
 
-Làm mọi thứ để có được một chỗ đứng(foothold) ban đầu trong victim's system.<br>Có 2 kỹ thuật chính:<br>- Kỹ thuật spear-phishing có mục tiêu<br>- Khai thác các lỗ hổng trên public website
+Làm mọi thứ để có được một chỗ đứng(foothold) ban đầu trong victim's system.<br>Có 2 kỹ thuật chính:<br>- Kỹ thuật spear-phishing có mục tiêu (Biện pháp xã hội)<br>- Khai thác các lỗ hổng trên public website (Biện pháp kỹ thuật).
 
 Foothold có thể được duy trì lâu dài hoặc tồn tại tạm thời(khi hệ thống thay đổi).
 
@@ -67,7 +67,7 @@ Trying to maintain chỗ đứng trong victim's system, ngay cả khi system res
 
 Trying to gain higher-level permissions on system/network bằng cách tận dụng system weakness, misconfigurations, vulnerabilities,... 
 <br>Mục tiêu là các roles có đặc quyền cao: 
-- SYSTEM/root
+- SYSTEM, NT_SYSTEM/root, uid = 0
 - Local admin
 - ...
   
