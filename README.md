@@ -1,14 +1,29 @@
 # MITRE ATT&CK
 
-Một chút ghi chép khi tìm hiểu về MITRE ATT&amp;CK 
+Một chút ghi chép khi tìm hiểu về MITRE ATT&amp;CK của mình với vai trò là Blue Team.
+
+ATT&CK = Adversarial Tactics Techniques & Common Knowledge (Các chiến thuật, kỹ thuật phá hoại và hiểu biết chung).
+
+____________________________________________________________________________________________________________________________
 
 Sưu tầm:
 [POSTCARD](https://www.youtube.com/watch?v=62y0unJohwM)
 
+**Cách MITRE ATT&CK framework được dùng để phân tích các cuộc tấn công mạng thực tế trong SOC**
 
-**Thông tin chung:** Tài liệu toàn diện về các chiến thuật, kỹ thuật, quy trình tấn công mạng thường sử dụng.
+ATT&CK tạo ra một cái ***ngôn ngữ chung*** rất giá trị, thay vì mô tả kiểu chung chung, nó cho phép mình gọi tên chính xác từng hành vi của cái tấn công bằng các ***tactic*** - mục tiêu lớn và ***technique*** - cách làm cụ thể. Giúp các đội SOC hiểu nhau và xây phòng thủ dựa trên cái mà hacker thực sự làm.
 
-ATT&CK = Adversarial Tactics Techniques & Common Knowledge (Các chiến thuật, kỹ thuật phá hoại và hiểu biết chung).
+Ví dụ một kịch bản rất quen thuộc: *Ai đó mở file, kích hoạt macro ẩn, rồi bùm, dữ liệu bị mã hóa, đòi tiền chuộc*
+
+=> Map từng giai đoạn một của cuộc tấn công này theo khung ATT&CK, cụ thể:
+
+<img width="2552" height="1782" alt="image" src="https://github.com/user-attachments/assets/a9f778c9-3f88-47e6-b9fe-ae4989c8f256" />
+
+Ví dụ 2: *SIEM SOC nhận alert từ EDR, thấy 1 process powershell.exe/rundll32.exe đang cố đọc bộ nhớ của process lsass.exe.
+Nghe nói cái LSSS này rất nhạy cảm. (3:06) Ừ, cực kỳ nhạy cảm luôn. Tiến trình LSSS này, tên đầy đủ là Local Security Authority Subsystem Service.
+Nó quản lý thông tin xác thực trên Windows sau khi mình đăng nhập. (3:18) À, tức là mật khẩu các thứ. (3:20) Đúng rồi, hoặc là cái hash mật khẩu.*
+
+____________________________________________________________________________________________________________________________
 
 **ATT&CK Matrix for Enterprise gồm 14 tactics, mỗi tactic có techniques, sub-techniques**
 
