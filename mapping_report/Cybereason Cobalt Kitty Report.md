@@ -2,6 +2,10 @@
 
 Là một chiến dịch APT có 5 phase, nhắm vào các công ty toàn cầu.
 
+Sử dụng một tools pentest là Cobalt Strike, được dùng cả bởi redteam và attacker - bị lạm dụng rộng rãi bởi các nhóm tội phạm mạng và APT (Advanced Persistent Threat) do tính linh hoạt và mạnh mẽ.
+- Beacon Payload: cốt lõi là Beacon, agent được triển khai trên victim's sys để thiết lập kết nối với C2, cho phép thực hiện các lệnh từ xa như thu thập dữ liệu, di chuyển ngang, và thực thi mã,...
+- Post-Exploitation: support các hoạt động sau xâm nhập, bao gồm đánh cắp thông tin xác thực, leo thang đặc quyền, và triển khai thêm payload.
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
 ## Phase 1: Penetration
