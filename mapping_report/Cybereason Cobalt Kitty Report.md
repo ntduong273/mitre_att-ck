@@ -18,7 +18,7 @@ Giải thích cụ thể:
 
 <img width="1405" height="574" alt="image" src="https://github.com/user-attachments/assets/a4266e9f-065a-4ff2-85c3-80990c47aec0" />
 
-
+<br><br><br>
 
 | ID Tactic | ID Technique | ID Sub-Technique | Description | 
 |-----------|--------------|------------------|-------------|
@@ -30,10 +30,42 @@ Giải thích cụ thể:
 
 <img width="1408" height="848" alt="image" src="https://github.com/user-attachments/assets/645cb020-0deb-4603-9397-d3d5344ffc4e" />
 
+<br><br><br>
+
+| ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|-----------|--------------|------------------|-------------|
+| TA0011 Command and Control | T1071 Application Layer Protocol | .001 Web Protocols | Mã assembly dịch ngược của malware fake Flash installer cho thấy nó có mở một kết nối đến C2 có địa chỉ là <code>http://110.10.179.65:80/ptF2</code> để tải 1 payload với shellcode được mã hóa. Kết nối được thực hiện trên giao thức HTTP dựa vào cổng 80. |
+
+Giải thích cụ thể:
+
+<img width="1247" height="829" alt="image" src="https://github.com/user-attachments/assets/21c46ebc-16b5-448a-9fce-e00d00c6fff4" />
+
+<br><br><br>
+
+| ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|-----------|--------------|------------------|-------------|
+| TA0002 Execution | T1204 User Execution | .002 Malicious File | Một kiểu tấn công spear-phishing email khác có đính kèm 1 file .doc có chứa các macro độc hại, được đặt tên dựa theo các tài liệu hợp pháp, nhằm đánh lừa nạn nhân mở file .doc này. |
+| TA0002 Execution | T1053 Scheduled Task/Job | .005 Scheduled Task | Khi mở file .doc kia, các macro độc hại sẽ được thực thi, tạo ra 2 cái task được lên lịch sẵn, thực hiện hành động tải xuống các file được ngụy trang dưới dạng đuôi .jpg từ C2. |
+
+Dẫn chứng:
+
+<img width="1408" height="478" alt="image" src="https://github.com/user-attachments/assets/2fc42ec4-a08b-4574-b704-cbd3453c6693" />
+
+<br><br><br>
+
+| ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|-----------|--------------|------------------|-------------|
+| TA0011 Command and Control | T1001 Data Obfuscation | .003 Protocol or Service Impersonation | giả mạo các giao thức hợp pháp, lưu lượng web service (80) để ngụy trang, làm rối nội dung file, cản trở các nỗ lực phân tích, phát hiện, loại bỏ file độc hại khỏi hệ thống |
+
+Dẫn chứng:
+
+<img width="1407" height="781" alt="image" src="https://github.com/user-attachments/assets/b54972ab-f69a-4ff7-9125-702ae6aa4513" />
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
 ## Phase 2: Foothold and persistence
+
+
 
 
 ## Phase 3: Command & control and data exfiltration
