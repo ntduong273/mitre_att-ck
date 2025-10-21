@@ -63,11 +63,43 @@ Dẫn chứng:
 
 ## Phase 2: Foothold and persistence
 
+Sử dụng 3 kĩ thuật như sau:
+
+<img width="1402" height="369" alt="image" src="https://github.com/user-attachments/assets/36af095f-d4db-4838-8742-898ef280f695" />
+
+<br><br>
+
+| ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|-----------|--------------|------------------|-------------|
+| TA0003 Persistence | T1547 Boot or Logon Autostart Execution | .001 Registry Run Keys / Startup Folder | Attacker sử dụng Windows Registry Autorun để execute VBScript và PowerShell scripts nhằm trú ngụ trong thư mục ProgramData, nơi mà sẽ được ẩn đi theo mặc định |
+| TA0003 Persistence | T1543 Create or Modify System Process | .003 Windows Service | Attacker created, modified các Windows Services để đảm bảo việc loading các PowerShell scripts on the compromised machines, hầu hết là Cobalt Strike’s Beacon payloads đã được mã hóa bằng Powershell |
+| TA0003 Persistence | T1053 Scheduled Task/Job | .005 Scheduled Task | Đảm bảo rằng payloads độc sẽ được thực thi theo khung thời gian xác định trước |
+
+<br><br>
+
+<img width="1256" height="356" alt="image" src="https://github.com/user-attachments/assets/b58a27ed-8556-4b47-a4f8-d473c0a7dd18" />
+
+Ngoài ra, còn có một phương án persistence khác là sử dụng backdoor khai thác lỗ hổng DLL Hijacking đối với Wsearch. Lợi dụng Wsearch là một thành phần mặc định của Windows, tự động chạy. Khi Wsearch khởi động, nó sẽ kích hoạt các ứng dụng SearchIndexer.exe và SearchProtocolHost.exe - tồn tại điểm yếu dễ bị tấn công. Từ đó attacker đặt một tệp “msfte.dll” giả mạo trong thư mục system32 làm cho tệp “msfte.dll” giả mạo sẽ được nạp mỗi khi Wsearch khởi chạy các ứng dụng này.
+
+Kỹ thuật này có thể được map sang MITRE ATT&CK theo định danh:
+
+| ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|-----------|--------------|------------------|-------------|
+| TA0003 Persistence | T1574 Hijack Execution Flow | .001 DLL | DLL Search Order Hijacking: search order - thứ tự tìm kiếm mà Windows sử dụng để nạp DLL, attacker có thể đặt một DLL Trojan vào một thư mục sẽ được ưu tiên bởi thứ tự tìm kiếm DLL, khiến Windows nạp DLL độc hại khi chương trình nạn nhân gọi đến nó. |
+
+Hoặc sử dụng các macro của Outlook, sửa các registry để khởi động mỗi khi boot:
+
+<img width="1238" height="537" alt="image" src="https://github.com/user-attachments/assets/de4c4d9f-3cfb-4643-a673-5f290e9218e5" />
 
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 ## Phase 3: Command & control and data exfiltration
 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
 
 ## Phase 4: Internal reconnaissance
 
