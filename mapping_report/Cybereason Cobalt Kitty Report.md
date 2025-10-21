@@ -1,7 +1,5 @@
 # Cybereason Cobalt Kitty Report
 
-## Chi tiết vòng đời tấn công
-
 Là một chiến dịch APT có 5 phase, nhắm vào các công ty toàn cầu.
 
 -----------------------------------------------------------------------------------------------------------------------------------
