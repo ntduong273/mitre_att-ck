@@ -204,3 +204,39 @@ Attacker tiếp tục find các vulnerabilities trên máy nạn nhân để có
 
 ## Phase 5: Lateral movement
 
+Obtaining credentials:
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 25 | TA0006 Credential Access | T1003 OS Credential Dumping | .001 LSASS Memory | Attacker thu thập các thông tin xác thực bằng phương pháp dump locally stored credentials như: password, NTLM hashes, Kerberos ticket,...  |
+
+<img width="1416" height="681" alt="image" src="https://github.com/user-attachments/assets/98c1b799-5a8e-42c9-a40e-df69c49c3320" />
+
+<br><br><br>
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 26 | TA0006 Credential Access | T1555 Credentials from Password Stores | .003 Credentials from Web Browsers | Attacker nhắm vào các thông tin xác thực Outlook của một số nhân viên cấp cao, chúng sửa 1 tool known password dumper cho hợp với Outlook, do bị detect bởi các av nên chuyển sang PowerShell |
+
+<img width="1337" height="71" alt="image" src="https://github.com/user-attachments/assets/40557ac4-bb2a-4483-bd06-d1808b83cfa6" />
+
+<img width="1307" height="472" alt="image" src="https://github.com/user-attachments/assets/87bff04c-484a-4642-84e0-5fa1566d6c68" />
+
+<br><br>
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 27 | TA0008 Lateral Movement | T1550 Use Alternate Authentication Material | Pass-the-hash | đánh cắp password hashes to move laterally within an environment, bypassing normal system access controls.  |
+| 28 | TA0008 Lateral Movement | T1550 Use Alternate Authentication Material | Pass-the-ticket | đánh cắp Kerberos tickets to move laterally within an environment, bypassing normal system access controls.  |
+
+<img width="1346" height="375" alt="image" src="https://github.com/user-attachments/assets/1d632c55-8680-4eff-ac94-a525c452abf7" />
+
+<br><br>
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 29 | TA0008 Lateral Movement | T1021 Remote Services | .002 SMB/Windows Admin Shares | Lợi dụng Windows Admin Share chạy trên net.exe để sử dụng các hidden network shares của Windows (thứ mà chỉ admin mới có thể truy cập) để mà copy tool tới máy nạn nhân và thực thi chúng. |
+
+<img width="1320" height="534" alt="image" src="https://github.com/user-attachments/assets/e95ccac0-20b1-4d3c-b8fa-da7e5d3fc139" />
+
+
