@@ -74,7 +74,7 @@ Dẫn chứng:
 
 | No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
 |----|-----------|--------------|------------------|-------------|
-| 11 | TA0011 Command & Control | T1105 Ingress Tool Transfer | No sub-technique | Kẻ tấn công vận chuyển các tool, file độc hại khác từ C2 vào compromised environment. Các tool, file này có thể đc copy từ 1 system bên ngoài do attacker kiểm soát tới network's victim qua kênh C2/protocol vận chuyển khác as ftp. Sau đó, attacker phân tán các tools giữa các thiết bị of victim nhằm mở rộng kiểm soát, lateral movement|
+| 11 | TA0011 Command & Control | T1105 Ingress Tool Transfer | No sub-technique | Kẻ tấn công vận chuyển các tool, file độc hại khác từ C2 vào compromised environment. Các tool, file này có thể đc copy từ 1 system bên ngoài do attacker kiểm soát tới network's victim qua kênh C2/protocol vận chuyển khác as ftp. Sau đó, attacker phân tán các tools giữa các thiết bị of victim nhằm mở rộng kiểm soát, lateral movement |
 
 Dẫn chứng:
 
@@ -142,9 +142,37 @@ Hoặc sử dụng các macro của Outlook, sửa các registry để khởi đ
 -----------------------------------------------------------------------------------------------------------------------------------
 
 ## Phase 3: Command & control and data exfiltration
+<br><br>
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 20 | TA0011 Command & Control | T1027 Application Layer Protocols | .001 Web Protocol | attacker triển khai một multi-stage payload delivery infrastructure trong giai đoạn đầu tiên của cuộc tấn công nhằm thực thi mà không để lại tệp (fileless): cách tiếp cận này để lại dấu vết forensics thấp vì hầu hết các payload được tải xuống từ máy chủ C&C và thực thi trong bộ nhớ mà không ghi lên đĩa | 
+
+Cụ thể:
+
+<img width="1223" height="845" alt="image" src="https://github.com/user-attachments/assets/4f58dd64-75ef-40d7-a0e8-02826aad30de" />
+
+<br><br>
+
+Ngoài việc sử dụng lại kỹ thuật C2 T1105 Ingress Tool Transfer để vận chuyển các tool, file độc hại khác từ C2 vào compromised environment thì attacker còn lợi dụng tiến trình regsvr32.exe là một dịch vụ Windows hợp pháp dùng để đăng kí/hủy đăng kí COM/DLL để chạy mã độc nhúng trong các tệp .sct (COM scriptlets).
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 21 | TA0005 Defense Evasion | T1218 System Binary Proxy Execution | .010 regsvr32 | thường bị lạm dụng trong các cuộc tấn công (APT, ransomware) vì khả năng thực thi mã ẩn trong file .sct mà không cần quyền cao, tránh bị các công cụ defense detect ra | 
+
+<img width="1457" height="754" alt="image" src="https://github.com/user-attachments/assets/7ab53197-0023-4ab1-9e3a-a3cea4a0a7d8" />
+
+<br><br><br>
+
+Một công cụ giao tiếp C2 khác được attacker used là Netcat tool, mã nguồn mở trên GitHub. Sử dụng trước khi install backdoor, attacker upload and execute NetCat on several machines. Khi netcat được thực thi, nó sẽ đổi tên tiến trình thành kb-10233.exe, ngụy trang nó như một tiến trình update hợp pháp của Windows, nhằm lẩn trốn sự phát hiện của các tools defense.
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 22 | TA0005 Defense Evasion | T1036 Masquerading | .005 Matching Legitimate Resource Name or Location | Nối/làm giống name or location với các legitimate files, Registry keys, other resources khi đặt tên tiến trình, nhằm trốn tránh detecting từ các tool defenses, observation. |
 
 
+<img width="1370" height="765" alt="image" src="https://github.com/user-attachments/assets/fb019f48-ab8f-4f46-b15a-f04891f68771" />
 
+<img width="1332" height="141" alt="image" src="https://github.com/user-attachments/assets/c0e7b040-59d4-403c-ab72-8994b9c3a84d" />
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
