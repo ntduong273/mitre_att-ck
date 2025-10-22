@@ -179,5 +179,28 @@ Một công cụ giao tiếp C2 khác được attacker used là Netcat tool, m�
 ## Phase 4: Internal reconnaissance
 
 
+Sau khi thiết lập 1 foothold trên máy nạn nhân, lập giao tiếp với C2, attacker tiến hành scann the network, nhằm liệt kê các machine, users and thu thập information about the environment. 
+
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 23 | TA0007 Discovery | T1046 Network Service Discovery | scanning network toàn bộ mạng cũng như trên từng máy cụ thể, looking for open ports, services, OS finger-printing and common vulnerabilities |
+
+Dẫn chứng:
+
+<img width="1457" height="509" alt="image" src="https://github.com/user-attachments/assets/d0dff6b7-4128-4868-897b-3ddec917d095" />
+
+<br><br><br>
+
+Attacker tiếp tục find các vulnerabilities trên máy nạn nhân để có thể privilege escalation, ví dụ chỉ ra 1 command đã được chạy bởi 1 PowerShell process, khi giải mã ra thì: 
+
+<img width="1207" height="314" alt="image" src="https://github.com/user-attachments/assets/a31ad029-e26d-40c6-aa81-c06caf668c67" />
+
+| No | ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|----|-----------|--------------|------------------|-------------|
+| 24 | TA0004 Privilege Escalation | T1068 Exploitation for Privilege Escalation | attacker cố gắng exploit những software vulnerabilities to elevate privileges.  |
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
 ## Phase 5: Lateral movement
 
