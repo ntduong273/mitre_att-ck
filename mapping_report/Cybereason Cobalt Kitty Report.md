@@ -59,13 +59,39 @@ Dẫn chứng:
 
 <br><br><br>
 
+**Sau khi lây nhiễm, tiến hành thực thi các scheduled task**
+
+
 | ID Tactic | ID Technique | ID Sub-Technique | Description | 
 |-----------|--------------|------------------|-------------|
-| TA0011 Command and Control | T1001 Data Obfuscation | .003 Protocol or Service Impersonation | giả mạo các giao thức hợp pháp, lưu lượng web service (80) để ngụy trang, làm rối nội dung file, cản trở các nỗ lực phân tích, phát hiện, loại bỏ file độc hại khỏi hệ thống |
+| TA0005 Defense Evasion | T1218 System Binary Proxy Execution | .005 Mshta | Lợi dụng mshta.exe là một công cụ Windows uy tín làm proxy để execute các malicious .hta files, js, VBScript |
 
 Dẫn chứng:
 
-<img width="1407" height="781" alt="image" src="https://github.com/user-attachments/assets/b54972ab-f69a-4ff7-9125-702ae6aa4513" />
+<img width="1400" height="590" alt="image" src="https://github.com/user-attachments/assets/89cba533-4e5b-4ca2-b754-479559d1c07d" />
+
+<br><br><br>
+
+| ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|-----------|--------------|------------------|-------------|
+| TA0011 Command & Control | T1105 Ingress Tool Transfer | No sub-technique | Kẻ tấn công vận chuyển các tool, file độc hại khác từ C2 vào compromised environment. Các tool, file này có thể đc copy từ 1 system bên ngoài do attacker kiểm soát tới network's victim qua kênh C2/protocol vận chuyển khác as ftp. Sau đó, attacker phân tán các tools giữa các thiết bị of victim nhằm mở rộng kiểm soát, lateral movement|
+
+Dẫn chứng:
+
+<img width="1406" height="643" alt="image" src="https://github.com/user-attachments/assets/eb5f867f-fcb4-4210-86d3-2cc73ce705b0" />
+
+<br><br><br>
+
+Ngoài việc dùng lại kĩ thuật lợi dụng powershell.exe để thực thi malicious code thì ở bước này còn sử dụng các kĩ thuật che dấu payload độc hại bằng các phương pháp làm rối (obfuscated, XOR), nhúng mã vào file ảnh/giả dạng file ảnh có đuôi .jpg (steganography) để tránh bị defense của victim phát hiện.
+
+| ID Tactic | ID Technique | ID Sub-Technique | Description | 
+|-----------|--------------|------------------|-------------|
+| TA0005 Defense Evasion | T1027 Obfuscated Files or Information | .010 Command Obfuscation | Làm rối các lệnh/script bằng cách mã hóa hoặc thay đổi cú pháp, thứ tự các kí tự,... khiến cho câu lệnh/script khó có thể đọc được bằng mắt thường hay tránh phát hiện bởi các IDS,AV do không so khớp được mẫu. |
+| TA0005 Defense Evasion | T1027 Obfuscated Files or Information | .003 Steganography | Nhúng mã độc trong file hợp pháp (image.jpg) để ngụy trang, thực chất là payload mã hóa, sử dụng steganography để trông như file hình ảnh vô hại. |
+
+Dẫn chứng:
+
+<img width="983" height="838" alt="image" src="https://github.com/user-attachments/assets/d07457c6-d06a-448f-9c08-e97dc24f2f28" />
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
